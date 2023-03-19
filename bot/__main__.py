@@ -150,11 +150,11 @@ def stats(update, context):
 def start(update, context):
     buttons = ButtonMaker()
     if config_dict['EMOJI_THEME']:
-        buttons.buildbutton(f"😎 {config_dict['START_BTN1_NAME']}", f"{config_dict['START_BTN1_URL']}")
-        buttons.buildbutton(f"🔥 {config_dict['START_BTN2_NAME']}", f"{config_dict['START_BTN2_URL']}")
+        buttons.buildbutton(f"😎Owner", f"https://t.me/SKINWALKER_X")
+        buttons.buildbutton(f"🔥Support Channel", f"https://t.me/+450jKDk8hW1mMzA1")
     else:
-        buttons.buildbutton(f"{config_dict['START_BTN1_NAME']}", f"{config_dict['START_BTN1_URL']}")
-        buttons.buildbutton(f"{config_dict['START_BTN2_NAME']}", f"{config_dict['START_BTN2_URL']}")
+        buttons.buildbutton(f"Owner", f"https://t.me/SKINWALKER_X")
+        buttons.buildbutton(f"Support Channel", f"https://t.me/+450jKDk8hW1mMzA1")
     reply_markup = buttons.build_menu(2)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''Hi!! I'm Science Edu Leech X Bot
