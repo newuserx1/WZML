@@ -150,14 +150,14 @@ def stats(update, context):
 def start(update, context):
     buttons = ButtonMaker()
     if config_dict['EMOJI_THEME']:
-        buttons.buildbutton(f"😎 {config_dict['START_BTN1_NAME']}", f"{config_dict['START_BTN1_URL']}")
-        buttons.buildbutton(f"🔥 {config_dict['START_BTN2_NAME']}", f"{config_dict['START_BTN2_URL']}")
+        buttons.buildbutton(f"😎 {config_dict['Owner']}", f"{config_dict['https://t.me/SKINWALKER_X']}")
+        buttons.buildbutton(f"🔥 {config_dict['SUPPORT CHANNEL']}", f"{config_dict['https://t.me/+450jKDk8hW1mMzA1']}")
     else:
-        buttons.buildbutton(f"{config_dict['START_BTN1_NAME']}", f"{config_dict['START_BTN1_URL']}")
-        buttons.buildbutton(f"{config_dict['START_BTN2_NAME']}", f"{config_dict['START_BTN2_URL']}")
+        buttons.buildbutton(f"{config_dict['Owner']}", f"{config_dict['https://t.me/SKINWALKER_X']}")
+        buttons.buildbutton(f"{config_dict['SUPPORT CHANNEL']}", f"{config_dict['https://t.me/+450jKDk8hW1mMzA1']}")
     reply_markup = buttons.build_menu(2)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
-        start_string = f'''This bot can mirror all your links to Google Drive!
+        start_string = f'''Hi!! I'm Science Edu Leech X Bot
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         if config_dict['PICS']:
@@ -165,7 +165,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
         else:
             sendMessage(start_string, context.bot, update.message, reply_markup)
     else:
-        text = f"Not Authorized user, deploy your own mirror bot"
+        text = f"Not Authorized user, Contact Owner To Get Permission"
         if config_dict['PICS']:
             sendPhoto(text, context.bot, update.message, rchoice(config_dict['PICS']), reply_markup)
         else:
@@ -205,126 +205,14 @@ def log(update, context):
     sendLogFile(context.bot, update.message)
 
 
-help_string = '''
-<b><a href='https://github.com/weebzone/WZML'>WeebZone</a></b> - The Ultimate Telegram MIrror-Leech Bot to Upload Your File & Link in Google Drive & Telegram
-Choose a help category:
-'''
-
-help_string_telegraph_user = f'''
-<b><u>👤 User Commands</u></b>
-<br><br>
-• <b>/{BotCommands.HelpCommand}</b>: To get this message
-<br><br>
-• <b>/{BotCommands.MirrorCommand[0]}</b> [download_url][magnet_link]: Start mirroring to Google Drive. Send <b>/{BotCommands.MirrorCommand[0]}</b> for more help
-<br><br>
-• <b>/{BotCommands.ZipMirrorCommand[0]}</b> [download_url][magnet_link]: Start mirroring and upload the file/folder compressed with zip extension
-<br><br>
-• <b>/{BotCommands.UnzipMirrorCommand[0]}</b> [download_url][magnet_link]: Start mirroring and upload the file/folder extracted from any archive extension
-<br><br>
-• <b>/{BotCommands.QbMirrorCommand[0]}</b> [magnet_link][torrent_file][torrent_file_url]: Start Mirroring using qBittorrent, Use <b>/{BotCommands.QbMirrorCommand[0]} s</b> to select files before downloading
-<br><br>
-• <b>/{BotCommands.QbZipMirrorCommand[0]}</b> [magnet_link][torrent_file][torrent_file_url]: Start mirroring using qBittorrent and upload the file/folder compressed with zip extension
-<br><br>
-• <b>/{BotCommands.QbUnzipMirrorCommand[0]}</b> [magnet_link][torrent_file][torrent_file_url]: Start mirroring using qBittorrent and upload the file/folder extracted from any archive extension
-<br><br>
-• <b>/{BotCommands.LeechCommand[0]}</b> [download_url][magnet_link]: Start leeching to Telegram, Use <b>/{BotCommands.LeechCommand[0]} s</b> to select files before leeching
-<br><br>
-• <b>/{BotCommands.ZipLeechCommand[0]}</b> [download_url][magnet_link]: Start leeching to Telegram and upload the file/folder compressed with zip extension
-<br><br>
-• <b>/{BotCommands.UnzipLeechCommand[0]}</b> [download_url][magnet_link][torent_file]: Start leeching to Telegram and upload the file/folder extracted from any archive extension
-<br><br>
-• <b>/{BotCommands.QbLeechCommand[0]}</b> [magnet_link][torrent_file][torrent_file_url]: Start leeching to Telegram using qBittorrent, Use <b>/{BotCommands.QbLeechCommand[0]} s</b> to select files before leeching
-<br><br>
-• <b>/{BotCommands.QbZipLeechCommand[0]}</b> [magnet_link][torrent_file][torrent_file_url]: Start leeching to Telegram using qBittorrent and upload the file/folder compressed with zip extension
-<br><br>
-• <b>/{BotCommands.QbUnzipLeechCommand[0]}</b> [magnet_link][torrent_file][torrent_file_url]: Start leeching to Telegram using qBittorrent and upload the file/folder extracted from any archive extension
-<br><br>
-• <b>/{BotCommands.CloneCommand[0]}</b> [drive_url][gdtot_url]: Copy file/folder to Google Drive
-<br><br>
-• <b>/{BotCommands.CountCommand}</b> [drive_url][gdtot_url]: Count file/folder of Google Drive
-<br><br>
-• <b>/{BotCommands.DeleteCommand}</b> [drive_url]: Delete file/folder from Google Drive (Only Owner & Sudo)
-<br><br>
-• <b>/{BotCommands.YtdlCommand[0]}</b> [yt-dlp supported link]: Mirror yt-dlp supported link. Send <b>/{BotCommands.YtdlCommand[0]}</b> for more help
-<br><br>
-• <b>/{BotCommands.YtdlZipCommand[0]}</b> [yt-dlp supported link]: Mirror yt-dlp supported link as zip
-<br><br>
-• <b>/{BotCommands.YtdlLeechCommand[0]}</b> [yt-dlp supported link]: Leech yt-dlp supported link
-<br><br>
-• <b>/{BotCommands.YtdlZipLeechCommand[0]}</b> [yt-dlp supported link]: Leech yt-dlp supported link as zip
-<br><br>
-• <b>/{BotCommands.UserSetCommand[0]}</b>: Users settings
-<br><br>
-• <b>/{BotCommands.RssListCommand}</b>: List all subscribed rss feed info
-<br><br>
-• <b>/{BotCommands.RssGetCommand}</b>: [Title] [Number](last N links): Force fetch last N links
-<br><br>
-• <b>/{BotCommands.RssSubCommand}</b>: [Title] [Rss Link] f: [filter]: Subscribe new rss feed
-<br><br>
-• <b>/{BotCommands.RssUnSubCommand}</b>: [Title]: Unubscribe rss feed by title
-<br><br>
-• <b>/{BotCommands.RssSettingsCommand}</b>: Rss Settings
-<br><br>
-• <b>/{BotCommands.CancelMirror}</b>: Reply to the message by which the download was initiated and that download will be cancelled
-<br><br>
-• <b>/{BotCommands.CancelAllCommand}</b>: Cancel all downloading tasks
-<br><br>
-• <b>/{BotCommands.ListCommand}</b> [query]: Search in Google Drive(s)
-<br><br>
-• <b>/{BotCommands.SearchCommand}</b> [query]: Search for torrents with API
-<br>sites: <code>rarbg, 1337x, yts, etzv, tgx, torlock, piratebay, nyaasi, ettv</code><br><br>
-• <b>/{BotCommands.StatusCommand}</b>: Shows a status of all the downloads
-<br><br>
-• <b>/{BotCommands.StatsCommand}</b>: Show Stats of the machine the bot is hosted on
-<br><br>
-• <b>/{BotCommands.SpeedCommand[0]}</b>: Speedtest of server
-<br><br>
-• <b>/weebhelp</b>: Okatu helper
-'''
-
-help_user = telegraph.create_page(
-    title=f"{config_dict['TITLE_NAME']} Help",
-    content=help_string_telegraph_user)["path"]
-
-help_string_telegraph_admin = f'''
-<b><u>🛡️ Admin Commands</u></b>
-<br><br>
-• <b>/{BotCommands.PingCommand}</b>: Check how long it takes to Ping the Bot
-<br><br>
-• <b>/{BotCommands.AuthorizeCommand}</b>: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-<br><br>
-• <b>/{BotCommands.UnAuthorizeCommand}</b>: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-<br><br>
-• <b>/{BotCommands.UsersCommand}</b>: show users settings (Only Owner & Sudo).
-<br><br>
-• <b>/{BotCommands.AddSudoCommand}</b>: Add sudo user (Only Owner)
-<br><br>
-• <b>/{BotCommands.RmSudoCommand}</b>: Remove sudo users (Only Owner)
-<br><br>
-• <b>/{BotCommands.PaidUsersCommand}</b>: Show Paid users (Only Owner & Sudo)
-<br><br>
-• <b>/{BotCommands.AddPaidCommand}</b>: Authorize Paid users (Only Owner)
-<br><br>
-• <b>/{BotCommands.RmPaidCommand}</b>: Unauthorize Paid users (Only Owner)
-<br><br>
-• <b>/{BotCommands.RestartCommand}</b>: Restart and update the bot (Only Owner & Sudo)
-<br><br>
-• <b>/{BotCommands.LogCommand}</b>: Get a log file of the bot. Handy for getting crash reports
-'''
-
-help_admin = telegraph.create_page(
-    title=f"{config_dict['TITLE_NAME']} Help",
-    content=help_string_telegraph_admin)["path"]
-
 
 def bot_help(update, context):
     button = ButtonMaker()
     if config_dict['EMOJI_THEME']:
-        button.buildbutton("👤 User", f"https://telegra.ph/{help_user}")
-        button.buildbutton("🛡️ Admin", f"https://telegra.ph/{help_admin}")
+        button.buildbutton("👤 User", f"https://t.me/c/1953393548/2")
+ 
     else:
-        button.buildbutton("User", f"https://telegra.ph/{help_user}")
-        button.buildbutton("Admin", f"https://telegra.ph/{help_admin}")
+        button.buildbutton("User", f"https://t.me/c/1953393548/2")
     sendMessage(help_string, context.bot, update.message, button.build_menu(2))
 
 
