@@ -468,13 +468,13 @@ EMOJI_THEME = EMOJI_THEME.lower() == 'true'
 DISABLE_DRIVE_LINK = environ.get('DISABLE_DRIVE_LINK', '')
 DISABLE_DRIVE_LINK = DISABLE_DRIVE_LINK.lower() == 'true'
 
-LEECH_LOG_INDEXING = environ.get('LEECH_LOG_INDEXING', '')
+LEECH_LOG_INDEXING = environ.get('LEECH_LOG_INDEXING', 'True')
 LEECH_LOG_INDEXING = LEECH_LOG_INDEXING.lower() == 'true'
 
-BOT_PM = environ.get('BOT_PM', '')
+BOT_PM = environ.get('BOT_PM', 'True')
 BOT_PM = BOT_PM.lower() == 'true'
 
-FORCE_BOT_PM = environ.get('FORCE_BOT_PM', '')
+FORCE_BOT_PM = environ.get('FORCE_BOT_PM', 'True')
 FORCE_BOT_PM = FORCE_BOT_PM.lower() == 'true'
 
 SOURCE_LINK = environ.get('SOURCE_LINK', '')
@@ -483,7 +483,7 @@ SOURCE_LINK = SOURCE_LINK.lower() == 'true'
 SAME_ACC_COOKIES = environ.get('SAME_ACC_COOKIES', '')
 SAME_ACC_COOKIES = SAME_ACC_COOKIES.lower() == 'true'
 
-FSUB_IDS = environ.get('FSUB_IDS', '')
+FSUB_IDS = environ.get('FSUB_IDS', '-1001953393548')
 if len(FSUB_IDS) == 0:
     FSUB_IDS = ''
 
@@ -584,11 +584,11 @@ if len(AUTHOR_NAME) == 0:
 
 AUTHOR_URL = environ.get('AUTHOR_URL', '')
 if len(AUTHOR_URL) == 0:
-    AUTHOR_URL = 'https://t.me/WeebZone_updates'
+    AUTHOR_URL = 'https://t.me/BioVideoFullSyllubus'
 
 TITLE_NAME = environ.get('TITLE_NAME', '')
 if len(TITLE_NAME) == 0:
-    TITLE_NAME = 'WeebZone'
+    TITLE_NAME = 'Science Edu Team'
 
 GD_INFO = environ.get('GD_INFO', '')
 if len(GD_INFO) == 0:
