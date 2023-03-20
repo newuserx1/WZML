@@ -158,7 +158,7 @@ def start(update, context):
     reply_markup = buttons.build_menu(2)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''Hi!! I'm Science Edu Leech X Bot
-Type /{BotCommands.HelpCommand} to get a list of available commands
+Join Support Channel to get a list of available commands
 '''
         if config_dict['PICS']:
             sendPhoto(start_string, context.bot, update.message, rchoice(config_dict['PICS']), reply_markup)
