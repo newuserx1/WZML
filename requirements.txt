@@ -40,5 +40,5 @@ tgCrypto
 urllib3
 waybackpy
 xattr
-yt-dlp
+git+https://github.com/yt-dlp/yt-dlp
 
